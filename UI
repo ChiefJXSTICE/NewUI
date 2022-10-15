@@ -150,6 +150,7 @@ local CypherLib = {
 	},
 	Settings = {
 		Theme = "Default",
+		ShowFriendsOnLaunch = true,
 		CloseBind = "RightControl"
 	},
 	Flags = {},
