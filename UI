@@ -160,7 +160,7 @@ local CypherLib = {
 
 
 
-local MainUI = game:GetObjects("rbxassetid://11285075667")[1]
+local MainUI = game:GetObjects("rbxassetid://11285148146")[1]
 print("CypherLib Loaded!")
 local function MakeDraggable(topbarobject, object) 
 	pcall(function()
