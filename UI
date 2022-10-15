@@ -1,10 +1,11 @@
+-- This User Interface Library is brought to you by Cypher Software.
 local Cypher = Instance.new("ScreenGui")
-Cypher.Name = "Cypher gui"
+Cypher.Name = "CypherUI"
 Cypher.Parent = game.CoreGui
 Cypher.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local NotificationHolder = Instance.new("ScreenGui")
-NotificationHolder.Name = "notiHolder"
+NotificationHolder.Name = "CypherNotification"
 NotificationHolder.Parent = game.CoreGui
 NotificationHolder.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -613,7 +614,11 @@ function CypherLib:New(Config)
 		end   
 
 		local general = Settings:Tab("General")
+		general:ToggleSetting("Show Music On Launch", "Shows the music menu when you load Snow Hub", true, "ShowMusicOnLaunch")
 		general:BindSetting("Close Bind", "Hides/Shows the main window when pressed.", Enum.KeyCode.RightControl, "CloseBind")
+
+		local appearance = Settings:Tab("Appearance")
+		appearance:Dropdown("Theme", "The look of the user interface", {"Default", "Discord", "Red", "Green", "Blue"}, "Default", "Theme")
 
 	end 
 	MusicConstructor()
