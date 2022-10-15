@@ -250,20 +250,6 @@ function CypherLib:New(Config)
 	MakeDraggable(MFrame.TopBar, MainUI) 
 	local oldScript = script
 
-	local MenuBtnPreset = game:GetObjects("rbxassetid://7037141226")[1]
-	local MusicBtn = MenuBtnPreset:Clone()
-	MusicBtn.Parent = MFrame.TopBar.ButtonHolder.MenuBtn.MenuFrame
-	MusicBtn.Position = UDim2.new(0,0,0,5)
-	MusicBtn.Text = "Music"
-	MusicBtn.MouseEnter:Connect(function() TweenService:Create(MusicBtn,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0}):Play() end)
-	MusicBtn.MouseLeave:Connect(function() TweenService:Create(MusicBtn,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.4}):Play() end)
-	local SettingsBtn = MenuBtnPreset:Clone()
-	SettingsBtn.Parent = MFrame.TopBar.ButtonHolder.MenuBtn.MenuFrame
-	SettingsBtn.Position = UDim2.new(0,0,0,25)
-	SettingsBtn.Text = "Settings"
-	SettingsBtn.MouseEnter:Connect(function() TweenService:Create(SettingsBtn,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0}):Play() end)
-	SettingsBtn.MouseLeave:Connect(function() TweenService:Create(SettingsBtn,TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.4}):Play() end)
-
 
 	function SettingsConstructor()
 		local Settings, SettingsFrame, TabPreset, ContainerPreset, TogglePreset, BindPreset, DropdownPreset, OptionPreset = {}, game:GetObjects("rbxassetid://7167491516")[1], game:GetObjects("rbxassetid://7177524915")[1], game:GetObjects("rbxassetid://7203599409")[1], game:GetObjects("rbxassetid://7208643984")[1], game:GetObjects("rbxassetid://7219277948")[1], game:GetObjects("rbxassetid://7435055269")[1], game:GetObjects("rbxassetid://7435032496")[1]
@@ -478,14 +464,12 @@ function CypherLib:New(Config)
 		end   
 
 		local general = Settings:Tab("General")
-		general:ToggleSetting("Show Music On Launch", "Shows the music menu when you load Snow Hub", true, "ShowMusicOnLaunch")
 		general:BindSetting("Close Bind", "Hides/Shows the main window when pressed.", Enum.KeyCode.RightControl, "CloseBind")
 
 		local appearance = Settings:Tab("Appearance")
 		appearance:Dropdown("Theme", "The look of the user interface", {"Default", "Discord", "Red", "Green", "Blue"}, "Default", "Theme")
 
 	end 
-	MusicConstructor()
 	SettingsConstructor()
 
 	local function OpenTabMenu()
