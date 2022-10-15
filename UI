@@ -4,7 +4,7 @@ Cypher.Parent = game.CoreGui
 Cypher.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local NotificationHolder = Instance.new("ScreenGui")
-NotificationHolder.Name = "notiHolder"
+NotificationHolder.Name = "CypherNotification"
 NotificationHolder.Parent = game.CoreGui
 NotificationHolder.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -150,7 +150,6 @@ local CypherLib = {
 	},
 	Settings = {
 		Theme = "Default",
-		ShowFriendsOnLaunch = true,
 		CloseBind = "RightControl"
 	},
 	Flags = {},
