@@ -1329,8 +1329,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			return DropdownSettings
 		end
-		
-		
+
 		-- Keybind
 		function Tab:CreateKeybind(KeybindSettings)
 			local CheckingForKey = false
